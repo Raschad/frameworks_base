@@ -4814,6 +4814,25 @@ public final class Settings {
         /** @hide */
         private static final Validator CAMERA_WAKE_SCREEN_VALIDATOR =
                 BOOLEAN_VALIDATOR;
+	/**
+         * Whether or not to send device back to sleep if Camera button is released ("Peek")
+         * 0 = 0ff, 1 = on
+         */
+        public static final String CAMERA_SLEEP_ON_RELEASE = "camera_sleep_on_release";
+
+        /** @hide */
+        public static final Validator CAMERA_SLEEP_ON_RELEASE_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Whether to launch secure camera app when key is longpressed
+         * 0 = 0ff, 1 = on
+         */
+        public static final String CAMERA_LAUNCH = "camera_launch";
+
+        /** @hide */
+        public static final Validator CAMERA_LAUNCH_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Whether to wake the screen with the back key, the value is boolean.
@@ -6358,6 +6377,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(MENU_WAKE_SCREEN);
             PRIVATE_SETTINGS.add(APP_SWITCH_WAKE_SCREEN);
             PRIVATE_SETTINGS.add(CAMERA_WAKE_SCREEN);
+	    PRIVATE_SETTINGS.add(CAMERA_SLEEP_ON_RELEASE);
+            PRIVATE_SETTINGS.add(CAMERA_LAUNCH);
             PRIVATE_SETTINGS.add(VOLUME_KEY_CURSOR_CONTROL);
             PRIVATE_SETTINGS.add(TORCH_LONG_PRESS_POWER_GESTURE);
             PRIVATE_SETTINGS.add(TORCH_LONG_PRESS_POWER_TIMEOUT);
@@ -6619,6 +6640,8 @@ public final class Settings {
             VALIDATORS.put(MENU_WAKE_SCREEN, MENU_WAKE_SCREEN_VALIDATOR);
             VALIDATORS.put(APP_SWITCH_WAKE_SCREEN, APP_SWITCH_WAKE_SCREEN_VALIDATOR);
             VALIDATORS.put(CAMERA_WAKE_SCREEN, CAMERA_WAKE_SCREEN_VALIDATOR);
+	    VALIDATORS.put(CAMERA_SLEEP_ON_RELEASE, CAMERA_SLEEP_ON_RELEASE_VALIDATOR);
+            VALIDATORS.put(CAMERA_LAUNCH, CAMERA_LAUNCH_VALIDATOR);
             VALIDATORS.put(VOLUME_KEY_CURSOR_CONTROL, VOLUME_KEY_CURSOR_CONTROL_VALIDATOR);
             VALIDATORS.put(TORCH_LONG_PRESS_POWER_GESTURE,
                     TORCH_LONG_PRESS_POWER_GESTURE_VALIDATOR);
